@@ -31,9 +31,9 @@ class Square:
     def size(self):
         """
         Property decorator to turn the size method into a getter
-        
-        Returns: 
-        	int: the size of the square
+
+        Returns:
+            int: the size of the square
         """
         return self.__size
 
@@ -62,9 +62,9 @@ class Square:
     def position(self):
         """
         Property decorator to turn the position method into a getter
-        
+
         Returns:
-        	tuple: the position of the square
+            tuple: the position of the square
         """
         return self.__position
 
@@ -85,9 +85,9 @@ class Square:
     def area(self):
         """
         Public instance method that returns the current square area
-        
+
         Returns:
-			int: the area of the square
+            int: the area of the square
         """
         return self.__size ** 2
 
@@ -95,7 +95,7 @@ class Square:
         """
         Public instance method that prints the square with the character #
         * if size is equal to 0, print an empty line
-        * position should be use by using space - 
+        * position should be use by using space -
         Dont fill lines by spaces when position[1] > 0
         """
         if self.__size == 0:
