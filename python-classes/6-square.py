@@ -66,7 +66,8 @@ class Square:
         Args:
             value (int): new value that defines the size of the square
         """
-        if not isinstance(value, tuple):
+        if not isinstance(value, tuple) or len(value) != 2 or \
+            not all([isinstance(i, int) and i >= 0 for i in tuple]):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -87,6 +88,8 @@ class Square:
             for x in range(0, self.__size):
                 if self.__position[0] > 0:
                     print(" " * self.__position[0], end="")
+                elif self.__position[1] > 0:
+                    print("", end="")
                 for y in range(0, self.__size):
                     print("#", end="")
                 print()
