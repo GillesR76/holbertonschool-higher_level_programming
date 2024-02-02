@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 """
-Write an empty class Square that defines a square by:
+Write a class Square that defines a square by:
 * Private instance attribute: size
-* Instantiation with size (no type/value verification)
+* Private instance attribute: position
+* Instantiation with optional size and optional position
+* Public instance method that returns the current square area
+* Public instance method that prints in stdout the square
+with the character #
 * You are not allowed to import any module
 """
 
@@ -27,6 +31,9 @@ class Square:
     def size(self):
         """
         Property decorator to turn the size method into a getter
+        
+        Returns: 
+        	int: the size of the square
         """
         return self.__size
 
@@ -55,6 +62,9 @@ class Square:
     def position(self):
         """
         Property decorator to turn the position method into a getter
+        
+        Returns:
+        	tuple: the position of the square
         """
         return self.__position
 
@@ -75,18 +85,23 @@ class Square:
     def area(self):
         """
         Public instance method that returns the current square area
+        
+        Returns:
+			int: the area of the square
         """
         return self.__size ** 2
 
     def my_print(self):
         """
         Public instance method that prints the square with the character #
+        * if size is equal to 0, print an empty line
+        * position should be use by using space - 
+        Dont fill lines by spaces when position[1] > 0
         """
         if self.__size == 0:
             print()
         else:
-            for x in range(self.__position[1]):
-                print()
+            print("\n" * self.__position[1], end="")
             for x in range(self.__size):
                 print(" " * self.__position[0], end="")
                 print("#" * self.__size)
