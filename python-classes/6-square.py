@@ -24,8 +24,8 @@ class Square:
             size (int): size of the square
             position (tuple): tuple of 2 positive integers
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -98,20 +98,12 @@ class Square:
         * position should be use by using space -
         Dont fill lines by spaces when position[1] > 0
         """
-        """
+
         if self.__size == 0:
             print()
         else:
             for x in range(self.__position[1]):
-            print("\n" * self.__position[1], end="")
+                print("\n" * self.__position[1], end="")
             for x in range(self.__size):
                 print(" " * self.__position[0], end="")
                 print("#" * self.__size)
-        """
-        if self.__size == 0:
-            print()
-        else:
-            for _ in range(self.__position[1]):
-                print()
-            for _ in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
