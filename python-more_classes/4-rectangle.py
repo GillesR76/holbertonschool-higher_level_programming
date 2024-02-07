@@ -104,15 +104,12 @@ class Rectangle:
             str: the rectangle with the character #
         """
         if self.__width == 0 or self.__height == 0:
-            print("")
+            return ""
         else:
             return "\n".join("#" * self.__width for x in range(self.__height))
 
     def __repr__(self):
         """
-        String method that returns a value of type string
-
-        Returns:
-            str: the rectangle with the character #
+        String method that a string representation of the rectangle
         """
         return "Rectangle ({}, {})".format(self.__width, self.__height)
