@@ -7,7 +7,6 @@ to add 2 integers
 The default value of b is 98
 The function add_integer returns an integer: the addition of a and b
 
-For example:
 a and b must be integers or floats:
 >>> add_integer(1, 2)
 3
@@ -27,6 +26,7 @@ Otherwise:
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
+
 >>> add_integer(None)
 Traceback (most recent call last):
     ...
