@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 """
 Write a class Rectangle that defines a rectangle:
 * Private instance attribute: width
