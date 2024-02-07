@@ -18,3 +18,4 @@ def text_indentation(text):
         text = text.replace(ch, ch+"\n" * 2)
     text = text.rstrip("\n") and text.lstrip()
     text = text.rstrip()
+    print(text.replace('\n ', '\n'), end="")
