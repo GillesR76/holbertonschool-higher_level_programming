@@ -10,6 +10,8 @@ The function add_integer returns an integer: the addition of a and b
 a and b must be integers or floats:
 >>> add_integer(1, 2)
 3
+>>> add_integer(0, 0)
+0
 >>> add_integer(100, -2)
 98
 >>> add_integer(2)
