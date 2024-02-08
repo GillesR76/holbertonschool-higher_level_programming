@@ -155,5 +155,5 @@ class Rectangle:
         """
         Class method that that returns a new Rectangle instance
         """
-        Rectangle.size = cls.width = cls.height
+        Rectangle.size = Rectangle.width = Rectangle.height
         return Rectangle(size, size)
