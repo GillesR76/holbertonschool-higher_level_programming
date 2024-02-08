@@ -9,7 +9,6 @@ after each of these characters: ., ? and :
 of each printed line
 """
 
-
 def text_indentation(text):
     """
     Function that prints that prints a text with 2 new lines
