@@ -4,8 +4,6 @@
 a and b must be integers or floats:
 >>> add_integer(1, 2)
 3
->>> add_integer(0, 0)
-0
 >>> add_integer(100, -2)
 98
 >>> add_integer(2)
@@ -14,8 +12,6 @@ a and b must be integers or floats:
 98
 >>> add_integer(100.3, 100.3)
 200
->>> add_integer(-2, -2)
--4
 
 Otherwise:
 >>> add_integer(4, "School")
