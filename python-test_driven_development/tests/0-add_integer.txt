@@ -1,12 +1,6 @@
 # doctest_0-add_integer.py
 >>> add_integer = __import__('0-add_integer').add_integer
 
-"""
-Test file that tests the add_integer function which is meant
-to add 2 integers
-The default value of b is 98
-The function add_integer returns an integer: the addition of a and b
-
 a and b must be integers or floats:
 >>> add_integer(1, 2)
 3
@@ -33,5 +27,3 @@ TypeError: b must be an integer
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
-
-"""
