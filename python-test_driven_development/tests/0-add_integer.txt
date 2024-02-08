@@ -4,19 +4,22 @@
 a and b must be integers or floats:
 >>> add_integer(1, 2)
 3
+
 >>> add_integer(100, -2)
 98
+
 >>> add_integer(2)
 100
+
 >>> add_integer(100.3, -2)
 98
+
 >>> add_integer(100.3, 100.3)
 200
 
-Otherwise:
 >>> add_integer(4, "School")
 Traceback (most recent call last):
-    ...
+  ...
 TypeError: b must be an integer
 
 >>> add_integer("a", 4)
