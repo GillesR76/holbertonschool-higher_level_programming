@@ -11,8 +11,8 @@ that prints the list, but sorted (ascending sort)
 
 
 class MyList(list):
+    """class 'BaseGeometry'"""
+
     def print_sorted(self):
-        """
-        Function that prints the list, but sorted (ascending sort)
-        """
+        """Function that prints the list, but sorted (ascending sort)"""
         print(sorted(self))
