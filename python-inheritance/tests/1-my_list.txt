@@ -30,3 +30,17 @@ Printing a sorted list
 >>> my_list.append(1)
 >>> my_list.print_sorted()
 [1]
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> print(my_list.__str__())
+[1, 4, 2]
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> print(isinstance(my_list, list))
+True
+
