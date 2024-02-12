@@ -2,9 +2,9 @@
 
 
 """
-* Write a class BaseGeometry
+* Write a 'class BaseGeometry'
 * Public instance method: that raises an Exception
-* You are not allowed to import any module
+* You are not allowed to 'import' any module
 """
 
 
