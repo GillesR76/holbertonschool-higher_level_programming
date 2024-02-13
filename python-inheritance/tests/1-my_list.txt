@@ -51,3 +51,7 @@ Printing a sorted list
 >>> print(isinstance(my_list, list))
 True
 
+>>> my_list = MyList(None)
+Traceback (most recent call last):
+    ...
+TypeError: 'NoneType' object is not iterable
