@@ -55,3 +55,8 @@ True
 Traceback (most recent call last):
     ...
 TypeError: 'NoneType' object is not iterable
+
+>>> my_list = MyList([1, 4], [3, 2])
+Traceback (most recent call last):
+    ...
+TypeError: list expected at most 1 argument, got 2
