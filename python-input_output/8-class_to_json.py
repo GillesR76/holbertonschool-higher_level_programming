@@ -12,9 +12,6 @@ list, dictionary, string, integer and boolean
 * You are not allowed to import any module
 """
 
-import json
-
-
 def class_to_json(obj):
     """Function that returns the dictionary description"""
-    return json.dumps(obj, default=lambda obj: obj.__dict__)
+    return obj.__dict__
