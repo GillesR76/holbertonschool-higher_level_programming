@@ -54,6 +54,3 @@ class Square(Rectangle):
         """Public instance method inherited from parent class"""
         return self.__size * self.__size
 
-    def __str__(self):
-        """String method"""
-        return f"[Rectangle] {self.__size}/{self.__size}"
