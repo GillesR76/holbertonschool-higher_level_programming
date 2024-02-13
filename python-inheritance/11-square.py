@@ -22,7 +22,7 @@ class Square(Rectangle):
     def area(self):
         """Public instance method inherited from parent class"""
         return self.__size * self.__size
-    
+
     def __str__(self):
         """String method that prints a reprsentation of a square"""
         return f"[Rectangle] {self.__size}/{self.__size}"
