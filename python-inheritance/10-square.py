@@ -46,8 +46,8 @@ class Square(Rectangle):
     """New subclass Square that inherits from subclass Rectangle"""
 
     def __init__(self, size):
-        self.__size = size
         super().__init__(self.__size, self.__size)
+        self.__size = size
 
     def area(self):
         """Public instance method inherited from parent class"""
