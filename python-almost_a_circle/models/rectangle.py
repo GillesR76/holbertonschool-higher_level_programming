@@ -24,6 +24,15 @@ from models.base import Base
 class Rectangle(Base):
     """Sublclass of Base named Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Constructor to initialize the Rectanble instance
+
+        Args:
+            width (int): width of the rectangle
+            height (int): height of the rectangle
+            x (int): coordinate of the rectangle
+            y (int): coordinate of the rectangle
+        """
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -41,11 +50,12 @@ class Rectangle(Base):
         Args:
             value (int): new value that defines the width of the rectangle
         """
+        self.__width = value
 
     @property
     def height(self):
         """Property decorator to turn the height attribute into a getter"""
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -53,6 +63,7 @@ class Rectangle(Base):
         Args:
             value (int): new value that defines the height of the rectangle
         """
+        self.__height = value
 
     @property
     def x(self):
@@ -65,6 +76,7 @@ class Rectangle(Base):
         Args:
             value (int): new value that defines x
         """
+        self.__x = value
 
     @property
     def y(self):
@@ -77,3 +89,4 @@ class Rectangle(Base):
         Args:
             value (int): new value that defines y
         """
+        self.__y = value
