@@ -112,11 +112,11 @@ class Rectangle(Base):
         return self.height * self.width
 
     def display(self):
-        """Public method that the rectangle in stdout"""
-        for x in range(self.height):
-            for y in range(self.width):
-                print("#", end="")
+        """Public method that prints the rectangle in stdout"""
+        for i in range(self.y):
             print()
+        for j in range(self.height):
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """
