@@ -1,0 +1,79 @@
+#!/usr/bin/python3
+
+
+"""
+* Write the class Rectangle that inherits from Base:
+* In the file models/rectangle.py
+* Class Rectangle inherits from Base
+* Private instance attributes, each with its own
+public getter and setter:
+__width -> width
+__height -> height
+__x -> x
+__y -> y
+* Class constructor: def __init__(self, width, height,
+x=0, y=0, id=None):
+* Call the super class with id - this super call with
+use the logic of the __init__ of the Base class
+* Assign each argument width, height, x and y to the right attribute
+"""
+
+from models.base import Base
+
+
+class Rectangle(Base):
+    """Sublclass of Base named Rectangle"""
+    def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
+
+    @property
+    def width(self):
+        """Property decorator to turn the width attribute into a getter"""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """Setter decorator allowing to modify the value of width
+        Args:
+            value (int): new value that defines the width of the rectangle
+        """
+
+    @property
+    def height(self):
+        """Property decorator to turn the height attribute into a getter"""
+        return self.height
+
+    @height.setter
+    def height(self, value):
+        """Setter decorator allowing to modify the value of width
+        Args:
+            value (int): new value that defines the height of the rectangle
+        """
+
+    @property
+    def x(self):
+        """Property decorator to turn the x attribute into a getter"""
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """Setter decorator allowing to modify the value of width
+        Args:
+            value (int): new value that defines x
+        """
+
+    @property
+    def y(self):
+        """Property decorator to turn the y attribute into a getter"""
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """Setter decorator allowing to modify the value of width
+        Args:
+            value (int): new value that defines y
+        """
