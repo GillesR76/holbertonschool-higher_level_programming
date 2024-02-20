@@ -43,3 +43,20 @@ class Square(Rectangle):
             str: a modified version of the str method
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+
+    @property
+    def size(self):
+        """Property decorator to turn the size attribute into a getter"""
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """Setter decorator allowing to modify the value of size
+        Args:
+            value (int): new value that defines the size
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("with must be > 0")
+        self.__size = value
