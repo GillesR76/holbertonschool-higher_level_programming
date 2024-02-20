@@ -17,6 +17,7 @@ to the public instance attribute id
 """
 
 import json
+import os.path
 
 
 class Base:
@@ -62,8 +63,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Staticmethod that writes the JSON string representation
-        of list_objs to a file
+        """Staticmethod that that returns the list of the
+        JSON string representation to an object
         """
         if not json_string or json_string is None:
             json_string = []
@@ -82,3 +83,17 @@ class Base:
             dummy = cls(1, 0, 0, None)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Class method that returns a list of instances
+        from a file
+        """
+        file_of_instances = cls.__name__ + ".json"
+        if not os.path.isfile(file_of_instances):
+            return []
+        with open(file_of_instances, "r") as f:
+            file_to_string = f.read()
+        list_of_instances = cls.from_json_string(file_to_string)
+        dict_instances = [cls.create(**dict) for dict in list_of_instances]
+        return dict_instances
