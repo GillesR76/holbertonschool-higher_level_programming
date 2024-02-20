@@ -16,6 +16,8 @@ test the type of it
 to the public instance attribute id
 """
 
+import json
+
 
 class Base:
     """
@@ -24,9 +26,25 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        Using the init method to initialize public instance attributes
+        and private class attributes
+
+        Args:
+        id
+        """
         self.id = id
         if self.id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Static method that returns the json string
+        representation of the object
+        """
+        if list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
