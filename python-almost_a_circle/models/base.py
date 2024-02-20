@@ -78,7 +78,7 @@ class Base:
         """
         if cls.__name__ == cls.Rectangle:
             dummy = cls(1, 1, 0, 0, None)
-        if cls.__name__ == cls.Square:
+        elif cls.__name__ == cls.Square:
             dummy = cls(1, 0, 0, None)
         dummy.update(**dictionary)
         return dummy
