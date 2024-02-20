@@ -76,6 +76,6 @@ class Base:
         Class method that returns an instance with all attributes
         already set
         """
-        dummy = cls(1, 1, 0, 0, None)
+        dummy = cls(1, 1, 0, 0)
         dummy.update(**dictionary)
         return dummy
