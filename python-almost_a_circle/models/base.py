@@ -51,6 +51,9 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Classmethod that writes the JSON string representation
+        of list_objs to a file
+        """
         if list_objs is None:
             list_objs = []
         list_dicts = [obj.to_dictionary() for obj in list_objs]
@@ -59,6 +62,9 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """Staticmethod that writes the JSON string representation
+        of list_objs to a file
+        """
         if not json_string or json_string is None:
-            return "[]"
+            json_string = []
         return json.loads(json_string)
