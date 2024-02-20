@@ -129,6 +129,11 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args):
+        """
+        Public method that assigns an argument to each attribute
+        Args:
+            args: list of arguments using the unpacking operator *
+        """
         if len(args) > 0:
             self.id = args[0]
         if len(args) > 1:
