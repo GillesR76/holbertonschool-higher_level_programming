@@ -8,3 +8,6 @@ class TestSquare(unittest.TestCase):
         r1 = Square(1, 2)
         self.assertEqual(r1.id, 1)
         self.assertEqual(r1.x, 2)
+        
+        with self.assertRaises(TypeError):
+            r4 = Square("1", 2)
