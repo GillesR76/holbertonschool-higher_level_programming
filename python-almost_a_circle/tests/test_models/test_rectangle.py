@@ -123,8 +123,13 @@ class TestRectangle(unittest.TestCase):
 		self.assertEqual(r1.y, 15)
   
 	def create(self):
-		r1 = Rectangle(3, 5, 1)
-		expected_output = "[Rectangle] (1) 1/0 - 3/5"
-		self.assertEqual(r1.create(), expected_output)
+		r1 = Rectangle(id=30, width=4, height=3, x=7, y=15)
+		r1_dictionary = r1.to_dictionary()
+		r2 = Rectangle.create(**r1_dictionary)
+		self.assertEqual(r2.id, 30)
+		self.assertEqual(r2.width, 4)
+		self.assertEqual(r2.height, 3)
+		self.assertEqual(r2.x, 7)
+		self.assertEqual(r2.y, 15)
     
     
