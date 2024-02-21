@@ -122,12 +122,11 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(file_content, "[]")
         os.remove(filename)
 
-    def test_save_to_file_full(self):
-        filename = "Square.json"
-        Square.save_to_file([Square(1, 2)])
-        with open("Square.json", "r") as f:
-            list_output = json.load(f)
-        expected_output = [{'id': 2, 'size': 1, 'x': 2, 'y': 0}]
-        self.assertTrue(os.path.exists("Square.json"))
-        self.assertEqual(list_output, expected_output)
-        os.remove(filename)
+    def test_save_to_file(self):
+        s1 = Square(10, 7, 2, 8)
+        s2 = Square(2, 3, 4, 5)
+        Square.save_to_file([s1, s2])
+        with open("Square.json", "r") as file:
+            output = json.load(file)
+        expected_output = [s1.to_dictionary(), s2.to_dictionary()]
+        self.assertEqual(output, expected_output)
