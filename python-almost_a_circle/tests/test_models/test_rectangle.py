@@ -4,6 +4,7 @@ import unittest
 from models.rectangle import Rectangle
 from io import StringIO
 import sys
+import json
 
 class TestRectangle(unittest.TestCase):
 	
@@ -132,4 +133,10 @@ class TestRectangle(unittest.TestCase):
 		self.assertEqual(r2.x, 7)
 		self.assertEqual(r2.y, 15)
     
-    
+	def test_save_to_file(self):
+		r1 = Rectangle(10, 7, 2, 8, 1)
+		Rectangle.save_to_file([r1])
+		expected_output = [{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]
+		with open("Rectangle.json", "r") as f:
+			self.assertEqual(json.load(f), expected_output)
+       
