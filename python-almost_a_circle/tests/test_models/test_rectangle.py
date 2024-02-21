@@ -141,3 +141,9 @@ class TestRectangle(unittest.TestCase):
 			output = json.load(file)
 		expected_output = [r1.to_dictionary(), r2.to_dictionary()]
 		self.assertEqual(output, expected_output)
+  
+		Rectangle.save_to_file(None)
+		with open("Rectangle.json", "r") as file:
+			output = json.load(file)
+		expected_output = []
+		self.assertEqual(output, expected_output)
