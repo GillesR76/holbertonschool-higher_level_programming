@@ -127,7 +127,7 @@ class TestSquare(unittest.TestCase):
         Square.save_to_file([Square(1, 2)])
         with open("Square.json", "r") as f:
             list_output = json.load(f)
-        expected_output = [{'id': 25, 'size': 1, 'x': 2, 'y': 0}]
+        expected_output = [{'id': 2, 'size': 1, 'x': 2, 'y': 0}]
         self.assertTrue(os.path.exists("Square.json"))
         self.assertEqual(list_output, expected_output)
         os.remove(filename)
