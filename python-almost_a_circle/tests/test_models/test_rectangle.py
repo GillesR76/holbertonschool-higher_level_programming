@@ -121,5 +121,10 @@ class TestRectangle(unittest.TestCase):
 		self.assertEqual(r1.height, 3)
 		self.assertEqual(r1.x, 7)
 		self.assertEqual(r1.y, 15)
+  
+	def create(self):
+		r1 = Rectangle(3, 5, 1)
+		expected_output = "[Rectangle] (1) 1/0 - 3/5"
+		self.assertEqual(r1.create(), expected_output)
     
     
