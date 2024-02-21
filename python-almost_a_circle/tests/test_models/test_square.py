@@ -53,5 +53,5 @@ class TestSquare(unittest.TestCase):
 
     def test_str(self):
         """Test the string method"""
-        s1 = Square(3, 1, 3)
-        self.assertEqual(s1.__str__(), "[Square] (11) 1/3 - 3")
+        s1 = Square(3, 1, 3, 4)
+        self.assertEqual(s1.__str__(), "[Square] (4) 1/3 - 3")
