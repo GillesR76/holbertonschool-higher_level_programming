@@ -135,8 +135,9 @@ class TestRectangle(unittest.TestCase):
     
 	def test_save_to_file(self):
 		r1 = Rectangle(10, 7, 2, 8, 1)
-		Rectangle.save_to_file([r1])
-		expected_output = [{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]
-		with open("Rectangle.json", "r") as f:
-			self.assertEqual(json.load(f), expected_output)
-       
+		r2 = Rectangle(2, 3, 4, 5, 6)
+		Rectangle.save_to_file([r1, r2])
+		with open("Rectangle.json", "r") as file:
+			output = json.load(file)
+		expected_output = [r1.to_dictionary(), r2.to_dictionary()]
+		self.assertEqual(output, expected_output)
