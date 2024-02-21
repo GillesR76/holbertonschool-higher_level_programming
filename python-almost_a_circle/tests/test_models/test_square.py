@@ -86,3 +86,12 @@ class TestSquare(unittest.TestCase):
         # height should remain unchanged as it's not updated
         self.assertEqual(s1.x, 3)
         self.assertEqual(s1.y, 7)
+
+    def test_create(self):
+        s1 = Square(id=30, size=4, x=3, y=15)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual(s2.id, 30)
+        self.assertEqual(s2.size, 4)
+        self.assertEqual(s2.x, 3)
+        self.assertEqual(s2.y, 15)
