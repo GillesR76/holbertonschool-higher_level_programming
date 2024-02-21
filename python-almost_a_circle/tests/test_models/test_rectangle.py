@@ -92,5 +92,34 @@ class TestRectangle(unittest.TestCase):
 		r1 = Rectangle(10, 2, 1, 9, 17)
 		expected_output = {'x': 1, 'y': 9, 'id': 17, 'height': 2, 'width': 10}
 		self.assertEqual(r1.to_dictionary(), expected_output)
+	
+	def test_update(self):
+		r1 = Rectangle(10, 2, 1, 9, 17)
+
+        # Test update with positional arguments
+		r1.update(20, 3, 2, 8, 16)
+		self.assertEqual(r1.id, 20)
+		self.assertEqual(r1.width, 3)
+		self.assertEqual(r1.height, 2)
+		self.assertEqual(r1.x, 8)
+		self.assertEqual(r1.y, 16)
+
+        # Test update with keyword arguments
+		r1.update(id=30, width=4, height=3, x=7, y=15)
+		self.assertEqual(r1.id, 30)
+		self.assertEqual(r1.width, 4)
+		self.assertEqual(r1.height, 3)
+		self.assertEqual(r1.x, 7)
+		self.assertEqual(r1.y, 15)
+
+        # Test update with a mix of positional and keyword arguments
+        # Positional arguments should take precedence
+		r1.update(40, 5, x=6, y=14)
+		self.assertEqual(r1.id, 40)
+		self.assertEqual(r1.width, 5)
+        # height should remain unchanged as it's not updated
+		self.assertEqual(r1.height, 3)
+		self.assertEqual(r1.x, 7)
+		self.assertEqual(r1.y, 15)
     
-          
+    
