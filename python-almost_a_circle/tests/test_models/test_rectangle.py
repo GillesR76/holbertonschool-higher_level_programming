@@ -122,7 +122,7 @@ class TestRectangle(unittest.TestCase):
 		self.assertEqual(r1.x, 7)
 		self.assertEqual(r1.y, 15)
   
-	def create(self):
+	def test_create(self):
 		r1 = Rectangle(id=30, width=4, height=3, x=7, y=15)
 		r1_dictionary = r1.to_dictionary()
 		r2 = Rectangle.create(**r1_dictionary)
