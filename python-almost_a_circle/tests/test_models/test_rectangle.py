@@ -5,6 +5,7 @@ from models.rectangle import Rectangle
 from io import StringIO
 import sys
 import json
+import os
 
 class TestRectangle(unittest.TestCase):
 	
@@ -153,3 +154,4 @@ class TestRectangle(unittest.TestCase):
 			output = file.read()
 		expected_output = "[]"
 		self.assertEqual(output, expected_output)
+		os.remove('Rectangle.json')
