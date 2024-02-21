@@ -88,8 +88,8 @@ class TestRectangle(unittest.TestCase):
 		sys.stdout = sys.__stdout__
 		self.assertEqual(buffer.getvalue(), "\n\n\n     ####\n     ####\n     ####\n     ####\n     ####\n     ####\n")
         
-	
-  
-  
+	def test_to_dictionary(self):
+		r1 = Rectangle(10, 2, 1, 9)
+		self.assertEqual(r1.to_dictionary(), {'x': 1, 'y': 9, 'id': 17, 'height': 2, 'width': 10})
     
           
