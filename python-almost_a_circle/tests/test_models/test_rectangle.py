@@ -148,7 +148,8 @@ class TestRectangle(unittest.TestCase):
 			output = json.load(file)
 		expected_output = []
 		self.assertEqual(output, expected_output)
-  
+	
+	def test_save_to_file_empty(self):
 		Rectangle.save_to_file([])
 		filename = "Rectangle.json"
 		self.assertTrue(os.path.exists(filename))
