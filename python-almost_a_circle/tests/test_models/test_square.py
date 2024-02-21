@@ -47,3 +47,6 @@ class TestSquare(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             r12 = Square(1, 2, -3)
+
+        s9 = Square(1)
+        self.assertEqual(s9.size, 1)
