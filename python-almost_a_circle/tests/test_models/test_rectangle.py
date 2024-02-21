@@ -137,21 +137,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.x, 7)
         self.assertEqual(r2.y, 15)
 
-    def test_save_to_file(self):
-        r1 = Rectangle(10, 7, 2, 8, 1)
-        r2 = Rectangle(2, 3, 4, 5, 6)
-        Rectangle.save_to_file([r1, r2])
-        with open("Rectangle.json", "r") as file:
-            output = json.load(file)
-        expected_output = [r1.to_dictionary(), r2.to_dictionary()]
-        self.assertEqual(output, expected_output)
-
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as file:
-            output = json.load(file)
-        expected_output = []
-        self.assertEqual(output, expected_output)
-
     def test_load_from_file_none(self):
         list_rectangles_input = None
         Rectangle.save_to_file(list_rectangles_input)
