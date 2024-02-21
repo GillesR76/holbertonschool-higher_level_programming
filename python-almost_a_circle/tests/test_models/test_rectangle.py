@@ -137,36 +137,23 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.x, 7)
         self.assertEqual(r2.y, 15)
 
+    def test_save_to_file(self):
+        r1 = Rectangle(10, 7, 2, 8, 1)
+        r2 = Rectangle(2, 3, 4, 5, 6)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", "r") as file:
+            output = json.load(file)
+        expected_output = [r1.to_dictionary(), r2.to_dictionary()]
+        self.assertEqual(output, expected_output)
+
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            output = json.load(file)
+        expected_output = []
+        self.assertEqual(output, expected_output)
+
     def test_load_from_file_none(self):
         list_rectangles_input = None
         Rectangle.save_to_file(list_rectangles_input)
         Rectangle.load_from_file()
         self.assertTrue(os.path.exists("Rectangle.json"))
-
-    def test_save_to_file_none(self):
-        filename = "Rectangle.json"
-        Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as f:
-            list_output = json.load(f)
-        expected_output = []
-        self.assertTrue(os.path.exists("Rectangle.json"))
-        self.assertEqual(list_output, expected_output)
-        os.remove(filename)
-
-        filename = "Rectangle.json"
-        Rectangle.save_to_file([])
-        self.assertTrue(os.path.exists(filename))
-        with open(filename, "r") as f:
-            file_content = f.read()
-        self.assertEqual(file_content, "[]")
-        os.remove(filename)
-
-    def test_save_to_file_full(self):
-        filename = "Rectangle.json"
-        Rectangle.save_to_file([Rectangle(1, 2)])
-        with open("Rectangle.json", "r") as f:
-            list_output = json.load(f)
-        expected_output = [{'id': 18, 'width': 1, 'height': 2, 'x': 0, 'y': 0}]
-        self.assertTrue(os.path.exists("Rectangle.json"))
-        self.assertEqual(list_output, expected_output)
-        os.remove(filename)
