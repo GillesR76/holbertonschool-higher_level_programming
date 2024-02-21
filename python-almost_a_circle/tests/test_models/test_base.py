@@ -23,6 +23,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string([{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]),
                          '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]')
         
+    def test_from_json_string(self):
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string([]), [])
+        self.assertEqual(Base.from_json_string('[{"id": 89, "width": 10, "height": 4}, {"id": 7, "width": 1, "height": 7}]'),
+                                               [{"id": 89, "width": 10, "height": 4}, {"id": 7, "width": 1, "height": 7}])
+        
+        
 
 
     
