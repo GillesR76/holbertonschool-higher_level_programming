@@ -30,11 +30,11 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             s6 = Square(1, 2, "3")
 
-        s8 = Square(10, 2, 0, 12)
-        self.assertEqual(s8.size, 10)
-        self.assertEqual(s8.x, 2)
-        self.assertEqual(s8.y, 0)
-        self.assertEqual(s8.id, 12)
+        s1 = Square(10, 2, 0, 12)
+        self.assertEqual(s1.size, 10)
+        self.assertEqual(s1.x, 2)
+        self.assertEqual(s1.y, 0)
+        self.assertEqual(s1.id, 12)
 
         with self.assertRaises(ValueError):
             s9 = Square(-1, 2)
@@ -46,7 +46,7 @@ class TestSquare(unittest.TestCase):
             s11 = Square(0, 2)
 
         with self.assertRaises(ValueError):
-            r12 = Square(1, 2, -3)
+            s12 = Square(1, 2, -3)
 
         s9 = Square(1)
         self.assertEqual(s9.size, 1)
@@ -60,3 +60,29 @@ class TestSquare(unittest.TestCase):
         s1 = Square(10, 2, 1, 9)
         expected_output = {'x': 2, 'y': 1, 'id': 9, 'size': 10}
         self.assertEqual(s1.to_dictionary(), expected_output)
+
+    def test_update(self):
+        s1 = Square(10, 2, 1, 9)
+
+        # Test update with positional arguments
+        s1.update(20, 3, 2, 8)
+        self.assertEqual(s1.id, 20)
+        self.assertEqual(s1.size, 3)
+        self.assertEqual(s1.x, 2)
+        self.assertEqual(s1.y, 8)
+
+        # Test update with keyword arguments
+        s1.update(id=30, size=4, x=3, y=7)
+        self.assertEqual(s1.id, 30)
+        self.assertEqual(s1.size, 4)
+        self.assertEqual(s1.x, 3)
+        self.assertEqual(s1.y, 7)
+
+        # Test update with a mix of positional and keyword arguments
+        # Positional arguments should take precedence
+        s1.update(40, 5, x=6, y=14)
+        self.assertEqual(s1.id, 40)
+        self.assertEqual(s1.size, 5)
+        # height should remain unchanged as it's not updated
+        self.assertEqual(s1.x, 3)
+        self.assertEqual(s1.y, 7)
