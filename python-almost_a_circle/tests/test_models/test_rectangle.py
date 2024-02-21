@@ -80,6 +80,13 @@ class TestRectangle(unittest.TestCase):
 		r1.display()
 		sys.stdout = sys.__stdout__
 		self.assertEqual(buffer.getvalue(), "####\n####\n####\n####\n####\n####\n")
+
+		r2 = Rectangle(4, 6, 5, 3)
+		buffer = StringIO()
+		sys.stdout = buffer
+		r2.display()
+		sys.stdout = sys.__stdout__
+		self.assertEqual(buffer.getvalue(), "\n\n\n     ####\n     ####\n     ####\n     ####\n     ####\n     ####\n")
         
 	
   
