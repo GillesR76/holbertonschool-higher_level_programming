@@ -18,6 +18,7 @@ to the public instance attribute id
 
 import json
 import os.path
+import turtle
 
 
 class Base:
@@ -97,3 +98,30 @@ class Base:
         list_of_instances = cls.from_json_string(file_to_string)
         dict_instances = [cls.create(**dict) for dict in list_of_instances]
         return dict_instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        my_turtle = turtle.Turtle()
+        my_turtle.speed(1)
+        for rectangle in list_rectangles:
+            my_turtle.color('yellow', 'green')
+            my_turtle.penup()
+            my_turtle.goto(rectangle.x, rectangle.y)
+            my_turtle.pendown()
+            my_turtle.begin_fill()
+            for _ in range(2):
+                my_turtle.forward(rectangle.width)
+                my_turtle.right(90)
+                my_turtle.forward(rectangle.height)
+                my_turtle.right(90)
+            my_turtle.end_fill()
+
+        for square in list_squares:
+            my_turtle.color('red', 'purple')
+            my_turtle.begin_fill()
+            for _ in range(4):
+                my_turtle.forward(square.size)
+                my_turtle.right(90)
+            my_turtle.end_fill()
+
+        turtle.done()
