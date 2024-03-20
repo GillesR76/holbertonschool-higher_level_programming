@@ -23,8 +23,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    """ Query the database by selecting all rows from the
-    State table, ordered by the id column
+    """ Query the database by selecting the first row 
+    from the State table
     """
     state = session.query(State).first()
     if state:
