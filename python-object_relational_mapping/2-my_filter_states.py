@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE states.name = %s ORDER BY states.id",
+        "SELECT * FROM states WHERE states.name = %s ORDER BY id",
         (sys.argv[4],))
     rows = cursor.fetchall()
     for row in rows:
