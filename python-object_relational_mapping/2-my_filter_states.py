@@ -19,7 +19,7 @@ if __name__ == "__main__":
         database=sys.argv[3])
 
     cursor = connection.cursor()
-    cursor.exectute(
+    cursor.execute(
         "SELECT * FROM states WHERE states.name = %s ORDER BY states.id",
         (sys.argv[4],))
     rows = cursor.fetchall()
