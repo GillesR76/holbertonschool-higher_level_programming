@@ -1,2 +1,3 @@
 *pyc
-.sql
+*.sql
+!14-model_city_fetch_by_state.sql
