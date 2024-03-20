@@ -23,9 +23,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    """ Query the database to print the state id
-    if there is a match with the name state declared
-    on the command line
+    """ Adding a state into the state table by first
+    creating a new state object, then adding the object
+    to the session and commiting the changes to the database
     """
     add_state = State(name='Louisiana')
     session.add(add_state)
