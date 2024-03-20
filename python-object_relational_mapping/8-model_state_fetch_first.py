@@ -27,7 +27,7 @@ if __name__ == "__main__":
     State table, ordered by the id column
     """
     state = session.query(State).first()
-    if not state:
-        print("Nothing ")
-    else:
+    if state:
         print(f"{state.id}: {state.name}")
+    else:
+        print("Nothing ")
