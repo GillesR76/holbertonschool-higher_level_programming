@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE states.name = %s ORDER BY states.id",
-        (sys.argv[4],))
+        "SELECT * FROM states WHERE states.name = '{}' ORDER BY states.id"
+        .format(sys.argv[4],))
     rows = cursor.fetchall()
     for row in rows:
         print(row)
